@@ -1,4 +1,4 @@
-# study
+# Study Blog
 
 A place to publish study writeups. Articles are written in Markdown and rendered in GitHub style by GitHub Pages, with images and syntax highlighting. No PDF export, no build step.
 
