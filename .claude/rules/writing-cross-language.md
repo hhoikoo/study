@@ -58,6 +58,10 @@ Never invent anonymous authorities. If you cannot cite it, do not attribute it.
 
 If a sentence could apply to any topic, it is too generic. Rewrite it to be specific to the actual subject.
 
+## BANNED: Tilde for numeric ranges
+
+Never write a range as `200~400ms` or `3~10배`. In the GitHub-flavored renderer a `~` pairs with another `~` later in the document and strikes the text through. Write ranges with a hyphen (`200-400ms`, `3-10배`), or escape it (`200\~400ms`) only if a hyphen would be ambiguous. This applies to every `~` in article prose, captions, and tables.
+
 ## Self-Check Checklist
 
 Run this after writing or reviewing an article:
@@ -70,3 +74,5 @@ Run this after writing or reviewing an article:
 6. Read sentences aloud: do they sound spoken or written?
 7. Could this sentence apply to any topic? Too generic if yes
 8. Check for formal connector clustering (Furthermore/Moreover/Additionally or 따라서/또한/게다가)
+9. Grep for `~`: any numeric range using a tilde must become a hyphen
+10. Confirm there is no blanket source/attribution footer and no trailing "what I haven't figured out yet" section (see `article-voice.md`)

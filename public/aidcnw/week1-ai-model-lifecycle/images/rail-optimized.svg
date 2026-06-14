@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 478" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<rect x="0" y="0" width="760" height="478" rx="12" fill="#fbfbfa"/>
+<line x1="103" y1="350" x2="153" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="137" y1="350" x2="241" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="171" y1="350" x2="329" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="205" y1="350" x2="417" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="239" y1="350" x2="505" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="273" y1="350" x2="593" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="483" y1="350" x2="153" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="517" y1="350" x2="241" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="551" y1="350" x2="329" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="585" y1="350" x2="417" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="619" y1="350" x2="505" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="653" y1="350" x2="593" y2="60" stroke="#c9c9c4" stroke-width="1.4" stroke-opacity="0.7"/>
+<line x1="69" y1="350" x2="65" y2="60" stroke="#c0392b" stroke-width="2.4" stroke-opacity="1.0"/>
+<line x1="307" y1="350" x2="681" y2="60" stroke="#1f6f8b" stroke-width="2.4" stroke-opacity="1.0"/>
+<line x1="449" y1="350" x2="65" y2="60" stroke="#c0392b" stroke-width="2.4" stroke-opacity="1.0"/>
+<line x1="687" y1="350" x2="681" y2="60" stroke="#1f6f8b" stroke-width="2.4" stroke-opacity="1.0"/>
+<rect x="39" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="65" y="50" fill="#fff" font-size="13" text-anchor="middle">L0</text>
+<rect x="127" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="153" y="50" fill="#fff" font-size="13" text-anchor="middle">L1</text>
+<rect x="215" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="241" y="50" fill="#fff" font-size="13" text-anchor="middle">L2</text>
+<rect x="303" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="329" y="50" fill="#fff" font-size="13" text-anchor="middle">L3</text>
+<rect x="391" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="417" y="50" fill="#fff" font-size="13" text-anchor="middle">L4</text>
+<rect x="479" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="505" y="50" fill="#fff" font-size="13" text-anchor="middle">L5</text>
+<rect x="567" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="593" y="50" fill="#fff" font-size="13" text-anchor="middle">L6</text>
+<rect x="655" y="30" width="52" height="30" rx="5" fill="#2d3748"/>
+<text x="681" y="50" fill="#fff" font-size="13" text-anchor="middle">L7</text>
+<text x="380" y="18" fill="#555" font-size="13" text-anchor="middle">Leaf switch 8대 (레일 0~7)</text>
+<rect x="40" y="324" width="306" height="92" rx="8" fill="#fff" stroke="#bbb"/>
+<text x="52" y="340" fill="#333" font-size="12">GPU 서버 A  ·  내부 NVLink Switch</text>
+<rect x="55" y="356" width="28" height="34" rx="4" fill="#c0392b" stroke="#9aa0a6"/>
+<text x="69" y="377" fill="#fff" font-size="11" text-anchor="middle">G0</text>
+<rect x="89" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="103" y="377" fill="#333" font-size="11" text-anchor="middle">G1</text>
+<rect x="123" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="137" y="377" fill="#333" font-size="11" text-anchor="middle">G2</text>
+<rect x="157" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="171" y="377" fill="#333" font-size="11" text-anchor="middle">G3</text>
+<rect x="191" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="205" y="377" fill="#333" font-size="11" text-anchor="middle">G4</text>
+<rect x="225" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="239" y="377" fill="#333" font-size="11" text-anchor="middle">G5</text>
+<rect x="259" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="273" y="377" fill="#333" font-size="11" text-anchor="middle">G6</text>
+<rect x="293" y="356" width="28" height="34" rx="4" fill="#1f6f8b" stroke="#9aa0a6"/>
+<text x="307" y="377" fill="#fff" font-size="11" text-anchor="middle">G7</text>
+<rect x="420" y="324" width="306" height="92" rx="8" fill="#fff" stroke="#bbb"/>
+<text x="432" y="340" fill="#333" font-size="12">GPU 서버 B  ·  내부 NVLink Switch</text>
+<rect x="435" y="356" width="28" height="34" rx="4" fill="#c0392b" stroke="#9aa0a6"/>
+<text x="449" y="377" fill="#fff" font-size="11" text-anchor="middle">G0</text>
+<rect x="469" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="483" y="377" fill="#333" font-size="11" text-anchor="middle">G1</text>
+<rect x="503" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="517" y="377" fill="#333" font-size="11" text-anchor="middle">G2</text>
+<rect x="537" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="551" y="377" fill="#333" font-size="11" text-anchor="middle">G3</text>
+<rect x="571" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="585" y="377" fill="#333" font-size="11" text-anchor="middle">G4</text>
+<rect x="605" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="619" y="377" fill="#333" font-size="11" text-anchor="middle">G5</text>
+<rect x="639" y="356" width="28" height="34" rx="4" fill="#eef1f4" stroke="#9aa0a6"/>
+<text x="653" y="377" fill="#333" font-size="11" text-anchor="middle">G6</text>
+<rect x="673" y="356" width="28" height="34" rx="4" fill="#1f6f8b" stroke="#9aa0a6"/>
+<text x="687" y="377" fill="#fff" font-size="11" text-anchor="middle">G7</text>
+<text x="380" y="446" fill="#777" font-size="13" text-anchor="middle">…  서버 32대 × GPU 8개 = 256 GPU</text>
+<text x="380" y="468" fill="#666" font-size="12" text-anchor="middle">서버가 달라도 같은 번호 GPU(Gi)는 같은 레일(Li)로 묶인다. (레일 0·7만 강조)</text>
+</svg>

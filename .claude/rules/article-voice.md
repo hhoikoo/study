@@ -17,7 +17,7 @@ No YAML frontmatter. The renderer takes the first `# H1` as the title. Start the
 - Open with the actual content, not a preamble. The first paragraph says what the session covered or what the topic is, with specifics. No "In this post I'll cover..." / "이번 글에서는 ~를 다뤄보겠습니다".
 - Use `##` sections for the real subtopics. Section titles name the thing, not a category ("RoCE가 손실 네트워크에서 죽는 이유", not "주요 개념").
 - Vary section depth by how much there is to say. A subtopic you understood well gets more room. Don't pad thin ones to match.
-- End on a concrete takeaway, an open question, or what you want to dig into next. Not a recap of what you just wrote.
+- End on a concrete takeaway tied to the actual content. Not a recap of what you just wrote, and not a dedicated "open questions / what's next" section (see "Never include" below). A single forward-looking sentence folded into the last real section is fine; a standalone confessional closer is not.
 - Length follows the material. A weekly summary is usually 400 to 900 words. A single-topic deep dive can be longer. Don't inflate.
 
 ## The honesty bar (most important)
@@ -29,6 +29,11 @@ This is the line between a real study note and AI filler.
 - Mark uncertainty in the writer's voice ("여기는 아직 잘 모르겠는데", "확인이 필요함" / "not sure about this part yet"). Do not smooth over gaps with confident generic prose.
 - Allow honest negatives. If a technology has annoying tradeoffs, say so. AI positivity bias is a tell.
 - When researching a topic the writer didn't cover, say where it came from and keep claims to what the source supports.
+
+## Never include
+
+- **No blanket source/attribution footer.** Do not end with a line like "출처: ... 정리했다" or "Sources: ..." that names where the whole article came from. Cite specific claims inline with a link at the point you make them (the honesty bar), and stop there. The closing line is content, never a bibliography.
+- **No "아직 안 잡힌 것" / "다음에 볼 것" / "open questions" section.** Do not append a standalone section listing what you did not understand or plan to study next. Genuine uncertainty belongs inline, in the sentence where it comes up ("세부 동작은 아직 안 봤다"), not gathered into a trailing confessional. End on a real point from the material.
 
 ## Images and code
 

@@ -10,10 +10,10 @@
       "description": "GPU cluster networking: RDMA, RoCE, collective communication, and how the fabric keeps GPUs fed.",
       "articles": [
         {
-          "slug": "week1-gpu-cluster",
-          "title": "1주차: GPU 클러스터는 왜 RDMA를 쓸까",
+          "slug": "week1-ai-model-lifecycle",
+          "title": "1주차: GPU는 빠른데 왜 네트워크가 병목일까",
           "date": "2026-06-14",
-          "summary": "TCP/IP가 분산 학습에서 병목이 되는 이유와, RDMA, RoCE v2, GPU Direct RDMA가 그걸 어떻게 우회하는지 정리"
+          "summary": "AI 모델 생명주기(훈련·추론·에이전틱)부터 메모리 장벽, 분산 학습 병렬화, RDMA·RoCEv2·GPUDirect RDMA, rail-optimized 패브릭까지 1주차 정리"
         }
       ]
     }
