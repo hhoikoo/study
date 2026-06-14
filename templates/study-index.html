@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Study</title>
 <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<link rel="stylesheet" href="../assets/style.css?v=3">
-<script defer src="../assets/theme.js?v=3"></script>
+<link rel="stylesheet" href="../assets/style.css?v=4">
+<script defer src="../assets/theme.js?v=4"></script>
 </head>
 <body>
 <header class="site-head">
@@ -50,6 +50,18 @@ fetch('../manifest.json', { cache: 'no-store' })
       li.appendChild(el('div', null, `<a class="title" href="${href}">${esc(a.title)}</a>`));
       if (a.date) li.appendChild(el('div', 'meta', esc(a.date)));
       if (a.summary) li.appendChild(el('div', 'summary', esc(a.summary)));
+      const children = a.children || [];
+      if (children.length) {
+        const sub = el('ul', 'subarticle-list');
+        for (const c of children) {
+          const chref = href + encodeURIComponent(c.slug) + '/';
+          const item = el('li', 'subarticle-item');
+          item.appendChild(el('span', null, `<a href="${chref}">${esc(c.title)}</a>`));
+          if (c.summary) item.appendChild(el('span', 'sub-summary', esc(c.summary)));
+          sub.appendChild(item);
+        }
+        li.appendChild(sub);
+      }
       list.appendChild(li);
     }
   })

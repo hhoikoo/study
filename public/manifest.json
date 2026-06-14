@@ -13,7 +13,29 @@
           "slug": "week1-ai-model-lifecycle",
           "title": "1주차: GPU는 빠른데 왜 네트워크가 병목일까",
           "date": "2026-06-14",
-          "summary": "AI 모델 생명주기(훈련·추론·에이전틱)부터 메모리 장벽, 분산 학습 병렬화, RDMA·RoCEv2·GPUDirect RDMA, rail-optimized 패브릭까지 1주차 정리"
+          "summary": "AI 모델 생명주기(훈련·추론·에이전틱)부터 메모리 장벽, 분산 학습 병렬화, RDMA·RoCEv2·GPUDirect RDMA, rail-optimized 패브릭까지 1주차 정리",
+          "children": [
+            {
+              "slug": "rdma-hands-on",
+              "title": "RDMA 실전: InfiniBand 패킷 구조와 verbs",
+              "summary": "1주차에서 개념으로만 본 RDMA를 패킷 헤더와 verbs 코드 수준까지 파고든 기록"
+            },
+            {
+              "slug": "roce-congestion-control",
+              "title": "RoCEv2는 손실 이더넷에서 어떻게 버티나: PFC, ECN, DCQCN",
+              "summary": "1주차 마지막에 남긴 질문에 답하는 글. PFC의 무손실과 그 부작용, ECN과 DCQCN의 혼잡 제어"
+            },
+            {
+              "slug": "nccl-collectives",
+              "title": "NCCL collective: AllReduce는 어떻게 도는가",
+              "summary": "Ring과 Tree AllReduce의 차이, NCCL이 경로를 고르는 방식까지"
+            },
+            {
+              "slug": "nvl72-nvlink",
+              "title": "NVL72: 72개 GPU를 NVLink 한 도메인으로",
+              "summary": "Scale-up이 8개 GPU 벽을 넘는 방법. NVLink 도메인과 Tensor Parallelism"
+            }
+          ]
         }
       ]
     }

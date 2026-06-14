@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<rect x="0" y="0" width="760" height="330" rx="12" fill="#fbfbfa"/>
+<defs><marker id="su" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 Z" fill="#999"/></marker></defs>
+
+<text x="30" y="30" fill="#333" font-size="13" font-weight="bold">Scale-up: NVLink 도메인 (랙 안)</text>
+<text x="30" y="48" fill="#777" font-size="10.5">GPU당 1.8 TB/s, NVSwitch 통한 1-hop, 구리, 무손실</text>
+
+<!-- NVSwitch in middle, GPUs around -->
+<rect x="155" y="150" width="120" height="34" rx="6" fill="#cfe2f3" stroke="#9aa0a6"/>
+<text x="215" y="172" fill="#333" font-size="11" text-anchor="middle">NVLink Switch</text>
+<g font-size="9.5" text-anchor="middle">
+<rect x="60" y="80" width="46" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="83" y="97" fill="#333">GPU</text>
+<rect x="120" y="80" width="46" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="143" y="97" fill="#333">GPU</text>
+<rect x="180" y="80" width="46" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="203" y="97" fill="#333">GPU</text>
+<rect x="240" y="80" width="46" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="263" y="97" fill="#333">GPU</text>
+<rect x="300" y="80" width="46" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="323" y="97" fill="#333">...72</text>
+</g>
+<line x1="83" y1="106" x2="180" y2="150" stroke="#999" stroke-width="1.3" marker-end="url(#su)"/>
+<line x1="143" y1="106" x2="195" y2="148" stroke="#999" stroke-width="1.3" marker-end="url(#su)"/>
+<line x1="203" y1="106" x2="213" y2="148" stroke="#999" stroke-width="1.3" marker-end="url(#su)"/>
+<line x1="263" y1="106" x2="235" y2="148" stroke="#999" stroke-width="1.3" marker-end="url(#su)"/>
+<line x1="323" y1="106" x2="250" y2="150" stroke="#999" stroke-width="1.3" marker-end="url(#su)"/>
+<rect x="44" y="64" width="320" height="148" rx="8" fill="none" stroke="#7aa7d6" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="204" y="232" fill="#0969da" font-size="11" text-anchor="middle">72개가 하나의 GPU처럼 동작 → TP/EP를 72장에 펼침</text>
+
+<line x1="400" y1="40" x2="400" y2="290" stroke="#e2e2e2" stroke-width="1"/>
+
+<text x="420" y="30" fill="#333" font-size="13" font-weight="bold">Scale-out: IB/Ethernet (랙 사이)</text>
+<text x="420" y="48" fill="#777" font-size="10.5">NIC당 수백 Gb/s, leaf/spine, 동서 트래픽</text>
+
+<g font-size="9.5" text-anchor="middle">
+<rect x="470" y="200" width="70" height="40" rx="6" fill="#e2e2e2" stroke="#9aa0a6"/><text x="505" y="224" fill="#333">랙 A</text>
+<rect x="640" y="200" width="70" height="40" rx="6" fill="#e2e2e2" stroke="#9aa0a6"/><text x="675" y="224" fill="#333">랙 B</text>
+<rect x="555" y="110" width="70" height="32" rx="6" fill="#fde9c8" stroke="#9aa0a6"/><text x="590" y="130" fill="#333">spine</text>
+</g>
+<line x1="505" y1="200" x2="575" y2="142" stroke="#999" stroke-width="1.4"/>
+<line x1="675" y1="200" x2="605" y2="142" stroke="#999" stroke-width="1.4"/>
+<text x="590" y="268" fill="#777" font-size="10.5" text-anchor="middle">NVLink보다 한참 느린 링크.</text>
+<text x="590" y="284" fill="#777" font-size="10.5" text-anchor="middle">TP가 여길 넘어가면 매 단계 대기 비용이 커진다</text>
+</svg>

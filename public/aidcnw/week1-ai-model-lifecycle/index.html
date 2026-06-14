@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Article</title>
 <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
-<link rel="stylesheet" href="../../assets/style.css?v=3">
-<script defer src="../../assets/theme.js?v=3"></script>
+<link rel="stylesheet" href="../../assets/style.css?v=4">
+<script defer src="../../assets/theme.js?v=4"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@2/dist/zero-md.min.js"></script>
 </head>
 <body>
@@ -19,7 +19,23 @@
 </div>
 
 <main class="wrap doc-wrap">
-  <zero-md id="doc" src="index.md"></zero-md>
+  <zero-md id="doc" src="index.md">
+    <template data-merge="append">
+      <style>
+        .markdown-body { color: var(--fg); }
+        .markdown-body pre { background: var(--accent-bg); }
+        .markdown-body pre code, .markdown-body .hljs { color: var(--fg); background: transparent; }
+        .markdown-body pre code span { background: transparent; }
+        .hljs-comment, .hljs-quote { color: var(--tok-comment); font-style: italic; }
+        .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-doctag, .hljs-name, .hljs-built_in, .hljs-section { color: var(--tok-keyword); }
+        .hljs-string, .hljs-attr, .hljs-regexp, .hljs-addition, .hljs-meta-string { color: var(--tok-string); }
+        .hljs-number, .hljs-symbol, .hljs-bullet { color: var(--tok-number); }
+        .hljs-title, .hljs-title.function_, .hljs-function .hljs-title { color: var(--tok-title); }
+        .hljs-type, .hljs-class .hljs-title, .hljs-variable, .hljs-template-variable, .hljs-params, .hljs-attribute { color: var(--tok-type); }
+        .hljs-meta, .hljs-tag, .hljs-deletion { color: var(--tok-meta); }
+      </style>
+    </template>
+  </zero-md>
 </main>
 
 <script>
