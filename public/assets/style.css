@@ -104,25 +104,26 @@ a:hover { text-decoration: underline; }
 /* zero-md renders github-markdown-css in shadow DOM (responsive images + scrollable code already) */
 zero-md { display: block; }
 
-/* theme toggle (lives in the header) */
+/* theme toggle: fixed floating badge, consistent on every page */
 .theme-toggle {
-  flex: none;
-  width: 36px;
-  height: 36px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 50;
+  width: 42px;
+  height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 50%;
   background: var(--bg);
   color: var(--fg);
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
 }
 .theme-toggle:hover { background: var(--accent-bg); border-color: var(--link); }
-.site-head .head-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.site-head .head-text { flex: 1; min-width: 0; }
-.viewer-bar .theme-toggle { margin-left: auto; }
 
 @media (max-width: 600px) {
   .study-item, .article-item { margin-bottom: 10px; }

@@ -49,11 +49,14 @@
   }
 
   function build() {
-    btn = document.getElementById('theme-toggle');
-    if (btn) {
-      btn.addEventListener('click', function () { setTheme(effective() === 'dark' ? 'light' : 'dark'); });
-      updateBtn();
-    }
+    btn = document.createElement('button');
+    btn.id = 'theme-toggle';
+    btn.className = 'theme-toggle';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Toggle theme');
+    btn.addEventListener('click', function () { setTheme(effective() === 'dark' ? 'light' : 'dark'); });
+    document.body.appendChild(btn);
+    updateBtn();
 
     const zm = document.querySelector('zero-md');
     if (zm) {
