@@ -49,12 +49,11 @@
   }
 
   function build() {
-    btn = document.createElement('button');
-    btn.id = 'theme-toggle';
-    btn.type = 'button';
-    btn.addEventListener('click', function () { setTheme(effective() === 'dark' ? 'light' : 'dark'); });
-    document.body.appendChild(btn);
-    updateBtn();
+    btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.addEventListener('click', function () { setTheme(effective() === 'dark' ? 'light' : 'dark'); });
+      updateBtn();
+    }
 
     const zm = document.querySelector('zero-md');
     if (zm) {
