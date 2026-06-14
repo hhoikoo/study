@@ -1,0 +1,21 @@
+{
+  "site": {
+    "title": "스터디 글 모음",
+    "description": "스터디에서 배운 내용을 정리해 두는 곳. 마크다운으로 쓰고 GitHub Pages로 렌더링합니다."
+  },
+  "studies": [
+    {
+      "id": "ai-networking",
+      "title": "AI 네트워킹 스터디",
+      "description": "GPU 클러스터 네트워킹, RDMA, collective communication 같은 주제를 다루는 스터디",
+      "articles": [
+        {
+          "title": "1주차: GPU 클러스터는 왜 RDMA를 쓸까",
+          "path": "ai-networking/week1-rdma-for-gpu-clusters/index.md",
+          "date": "2026-06-14",
+          "summary": "TCP/IP가 분산 학습에서 병목이 되는 이유와, RDMA, RoCE v2, GPU Direct RDMA가 그걸 어떻게 우회하는지 정리"
+        }
+      ]
+    }
+  ]
+}

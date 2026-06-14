@@ -1,0 +1,57 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2328;
+  --muted: #59636e;
+  --border: #d1d9e0;
+  --link: #0969da;
+  --accent-bg: #f6f8fa;
+  --max: 860px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* index header */
+.site-head { border-bottom: 1px solid var(--border); padding: 48px 0 28px; }
+.site-head h1 { margin: 0 0 6px; font-size: 28px; }
+.site-head p { margin: 0; color: var(--muted); }
+
+/* study + article list */
+.studies { padding: 8px 0 64px; }
+.study { padding: 28px 0; border-bottom: 1px solid var(--border); }
+.study:last-child { border-bottom: none; }
+.study > h2 { margin: 0 0 4px; font-size: 20px; }
+.study > .desc { margin: 0 0 16px; color: var(--muted); font-size: 14px; }
+
+.article-list { list-style: none; margin: 0; padding: 0; }
+.article-item { padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; transition: border-color .15s, background .15s; }
+.article-item:hover { border-color: var(--link); background: var(--accent-bg); }
+.article-item a.title { font-size: 16px; font-weight: 600; }
+.article-item .meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.article-item .summary { color: var(--fg); font-size: 14px; margin-top: 6px; }
+.empty-study { color: var(--muted); font-size: 14px; font-style: italic; }
+
+.foot { color: var(--muted); font-size: 13px; padding: 24px 0 48px; border-top: 1px solid var(--border); }
+
+/* viewer */
+.viewer-bar { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
+.viewer-bar .wrap { display: flex; align-items: center; gap: 12px; height: 52px; }
+.viewer-bar a.back { font-size: 14px; }
+.viewer-bar .crumb { color: var(--muted); font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.doc-wrap { padding: 32px 0 80px; }
+zero-md { display: block; }
+.notfound { padding: 64px 20px; text-align: center; color: var(--muted); }

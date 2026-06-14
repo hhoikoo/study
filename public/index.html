@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스터디 글 모음</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <h1 id="site-title">스터디 글 모음</h1>
+    <p id="site-desc"></p>
+  </div>
+</header>
+
+<main class="wrap studies" id="studies"></main>
+
+<footer class="foot">
+  <div class="wrap">
+    마크다운으로 쓰고 GitHub Pages로 그대로 렌더링합니다.
+    <a href="https://github.com/hhoikoo/study">소스</a>
+  </div>
+</footer>
+
+<script>
+function el(tag, cls, html) {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (html != null) n.innerHTML = html;
+  return n;
+}
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+fetch('manifest.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    if (data.site) {
+      if (data.site.title) { document.title = data.site.title; document.getElementById('site-title').textContent = data.site.title; }
+      document.getElementById('site-desc').textContent = data.site.description || '';
+    }
+    const root = document.getElementById('studies');
+    const studies = (data.studies || []);
+    if (!studies.length) { root.appendChild(el('p', 'empty-study', '아직 글이 없습니다.')); return; }
+
+    for (const study of studies) {
+      const sec = el('section', 'study');
+      sec.appendChild(el('h2', null, esc(study.title)));
+      if (study.description) sec.appendChild(el('p', 'desc', esc(study.description)));
+
+      const articles = study.articles || [];
+      if (!articles.length) {
+        sec.appendChild(el('p', 'empty-study', '준비 중'));
+      } else {
+        const ul = el('ul', 'article-list');
+        for (const a of articles) {
+          const li = el('li', 'article-item');
+          const href = 'viewer.html#' + encodeURI(a.path);
+          li.appendChild(el('div', null, `<a class="title" href="${href}">${esc(a.title)}</a>`));
+          if (a.date) li.appendChild(el('div', 'meta', esc(a.date)));
+          if (a.summary) li.appendChild(el('div', 'summary', esc(a.summary)));
+          ul.appendChild(li);
+        }
+        sec.appendChild(ul);
+      }
+      root.appendChild(sec);
+    }
+  })
+  .catch(err => {
+    document.getElementById('studies').appendChild(el('p', 'empty-study', '목록을 불러오지 못했습니다: ' + esc(err.message)));
+  });
+</script>
+</body>
+</html>

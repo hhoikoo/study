@@ -1,0 +1,35 @@
+# macOS / OS metadata
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+secrets/
+*.key
+*.pem
+
+# Logs and temp
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# Python (local preview server leftovers)
+__pycache__/
+*.py[cod]
+
+# Local Claude session state (committed config lives in .claude/, this only ignores transient files)
+.claude/settings.local.json
+.claude/worktrees/
