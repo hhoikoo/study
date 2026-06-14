@@ -24,17 +24,20 @@
   <zero-md id="doc" src="index.md">
     <template data-merge="append">
       <style>
-        .markdown-body { color: var(--fg); }
-        .markdown-body pre { background: var(--accent-bg); }
-        .markdown-body pre code, .markdown-body .hljs { color: var(--fg); background: transparent; }
-        .markdown-body pre code span { background: transparent; }
-        .hljs-comment, .hljs-quote { color: var(--tok-comment); font-style: italic; }
-        .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-doctag, .hljs-name, .hljs-built_in, .hljs-section { color: var(--tok-keyword); }
-        .hljs-string, .hljs-attr, .hljs-regexp, .hljs-addition, .hljs-meta-string { color: var(--tok-string); }
-        .hljs-number, .hljs-symbol, .hljs-bullet { color: var(--tok-number); }
-        .hljs-title, .hljs-title.function_, .hljs-function .hljs-title { color: var(--tok-title); }
-        .hljs-type, .hljs-class .hljs-title, .hljs-variable, .hljs-template-variable, .hljs-params, .hljs-attribute { color: var(--tok-type); }
-        .hljs-meta, .hljs-tag, .hljs-deletion { color: var(--tok-meta); }
+        /* zero-md v2 highlights with PrismJS; override its light theme with our theme vars */
+        .markdown-body pre[class*="language-"],
+        .markdown-body code[class*="language-"] { color: var(--fg); background: transparent; text-shadow: none; }
+        .markdown-body pre code { color: var(--fg); }
+        .markdown-body pre[class*="language-"] { background: var(--accent-bg); }
+        .markdown-body :not(pre) > code[class*="language-"] { background: var(--accent-bg); }
+        .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); font-style: italic; }
+        .token.punctuation { color: var(--fg); }
+        .token.operator, .token.entity, .token.url { color: var(--fg); background: transparent; }
+        .token.boolean, .token.constant, .token.deleted, .token.number, .token.property, .token.symbol, .token.tag { color: var(--tok-number); }
+        .token.attr-name, .token.builtin, .token.char, .token.inserted, .token.selector, .token.string { color: var(--tok-string); }
+        .token.atrule, .token.attr-value, .token.keyword { color: var(--tok-keyword); }
+        .token.class-name, .token.function { color: var(--tok-title); }
+        .token.important, .token.regex, .token.variable { color: var(--tok-type); }
       </style>
     </template>
   </zero-md>
