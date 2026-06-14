@@ -38,7 +38,7 @@ BTH를 좀 더 보면, OpCode 1바이트가 transport 종류(상위 3비트)와 
 
 RDMA 프로그래밍은 객체 계층이 분명하다. 레포가 그린 트리가 깔끔하다.
 
-```
+```text
 Context (HCA 핸들)
   └─ PD (Protection Domain, 보안 경계)
        ├─ MR (Memory Region, 등록된 메모리)
