@@ -1,20 +1,6 @@
 # Study Blog
 
-Publish study writeups as Markdown and read them on a GitHub Pages site, rendered in GitHub style by the [zero-md](https://github.com/zerodevx/zero-md) web component. Images and code highlighting work. No build step. No PDF export.
-
-It was built for a network study group, then generalized so any study can use it.
-
-## URLs
-
-Three levels, each a clean URL backed by a directory `index.html`:
-
-```
-https://hhoikoo.github.io/study/                           list of studies
-https://hhoikoo.github.io/study/<study-id>/                that study's articles
-https://hhoikoo.github.io/study/<study-id>/<slug>/         an article (renders its index.md)
-```
-
-Live example: <https://hhoikoo.github.io/study/aidcnw/week1-gpu-cluster/>
+Publish study writeups as Markdown and read them on a GitHub Pages site, rendered in GitHub style by the [zero-md](https://github.com/zerodevx/zero-md) web component. Images and code highlighting work.
 
 ## Layout
 
