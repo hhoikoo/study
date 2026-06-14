@@ -6,7 +6,7 @@
   --link: #0969da;
   --accent-bg: #f6f8fa;
   --max: 820px;
-  --gutter: clamp(16px, 4vw, 24px);
+  --gutter: clamp(24px, 5vw, 40px);
 }
 
 * { box-sizing: border-box; }
