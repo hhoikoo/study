@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Article</title>
+<link rel="stylesheet" href="../../assets/style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@2?register"></script>
+</head>
+<body>
+<div class="viewer-bar">
+  <div class="wrap">
+    <a class="back" href="../../">Studies</a>
+    <span class="sep">/</span>
+    <a class="back" id="study-link" href="../">Articles</a>
+  </div>
+</div>
+
+<main class="wrap doc-wrap">
+  <zero-md id="doc" src="index.md"></zero-md>
+</main>
+
+<script>
+// Derive the study id from the path so the breadcrumb works at any base path.
+const segs = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '').split('/');
+const study = segs[segs.length - 2] || '';
+if (study) document.getElementById('study-link').textContent = study;
+
+const zm = document.getElementById('doc');
+zm.addEventListener('zero-md-rendered', () => {
+  const h = zm.shadowRoot && zm.shadowRoot.querySelector('h1, h2');
+  if (h && h.textContent.trim()) document.title = h.textContent.trim();
+});
+</script>
+</body>
+</html>

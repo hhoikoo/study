@@ -5,22 +5,23 @@ description: Serve public/ locally so you can read articles in the browser befor
 
 # Preview
 
-The site renders markdown client-side (zero-md), so it needs to be served over HTTP, not opened as a `file://`. Start a local static server on `public/`.
+The site renders markdown client-side (zero-md), so it needs HTTP, not `file://`. Serve `public/` with a static server.
 
 ## Workflow
 
-1. Start the server from the repo root:
+1. Start the server from `public/`:
    ```bash
    cd public && python3 -m http.server 8000
    ```
-   If port 8000 is taken, pick another and report it.
-2. Tell the user the URLs:
-   - Index: `http://localhost:8000/`
-   - A specific article: `http://localhost:8000/viewer.html#<study-id>/<slug>/index.md`
-3. Leave the server running in the background. When the user is done, they stop it (Ctrl-C) or ask you to.
+   If 8000 is taken, pick another port and report it.
+2. Give the user the URLs (clean paths, directories serve their `index.html`):
+   - Studies index: `http://localhost:8000/`
+   - A study: `http://localhost:8000/<study-id>/`
+   - An article: `http://localhost:8000/<study-id>/<slug>/`
+3. Leave the server running in the background. The user stops it (Ctrl-C) or asks you to.
 
 ## Notes
 
 - Run the server in the background so the session stays usable.
-- `file://` will not work: browsers block `fetch` of local files, so zero-md cannot load the `.md`. Always use the HTTP server.
-- Edits to `.md` files show on browser refresh. No build step.
+- `file://` will not work: browsers block `fetch` of local files, so zero-md cannot load the `.md`.
+- Edits to `.md` show on browser refresh. No build step.

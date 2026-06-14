@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="back" href="../">Studies</a>
+    <h1 id="study-title">Study</h1>
+    <p id="study-desc" class="desc"></p>
+  </div>
+</header>
+
+<main class="wrap studies">
+  <ul class="article-list" id="articles"></ul>
+</main>
+
+<footer class="foot">
+  <div class="wrap">Written in Markdown, rendered by GitHub Pages. <a href="https://github.com/hhoikoo/study">Source</a></div>
+</footer>
+
+<script>
+function el(tag, cls, html) { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; }
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+const id = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '').split('/').pop();
+
+fetch('../manifest.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    const study = (data.studies || []).find(s => s.id === id);
+    const list = document.getElementById('articles');
+    if (!study) { document.getElementById('study-title').textContent = id; list.appendChild(el('li', 'empty-study', 'Study not found in manifest.')); return; }
+
+    document.title = study.title;
+    document.getElementById('study-title').textContent = study.title;
+    document.getElementById('study-desc').textContent = study.description || '';
+
+    const articles = study.articles || [];
+    if (!articles.length) { list.appendChild(el('li', 'empty-study', 'No articles yet.')); return; }
+    for (const a of articles) {
+      const li = el('li', 'article-item');
+      const href = encodeURIComponent(a.slug) + '/';
+      li.appendChild(el('div', null, `<a class="title" href="${href}">${esc(a.title)}</a>`));
+      if (a.date) li.appendChild(el('div', 'meta', esc(a.date)));
+      if (a.summary) li.appendChild(el('div', 'summary', esc(a.summary)));
+      list.appendChild(li);
+    }
+  })
+  .catch(err => { document.getElementById('articles').appendChild(el('li', 'empty-study', 'Failed to load: ' + esc(err.message))); });
+</script>
+</body>
+</html>

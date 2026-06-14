@@ -4,21 +4,21 @@ paths:
 ---
 # Article voice
 
-These are study blog articles published to a GitHub Pages site. A person wrote them after a study session, not a content farm. The voice rules in `writing-en.md`, `writing-ko.md`, `writing-cross-language.md` apply to every word. This file covers the article-specific structure and the honesty bar.
+These are study writeups published to a GitHub Pages site. A person wrote them after a study session, not a content farm. The voice rules in `writing-en.md`, `writing-ko.md`, `writing-cross-language.md` apply to every word. This file covers article-specific structure and the honesty bar.
 
 ## What an article is
 
-Default to Korean (the study group runs in Korean) unless the source material or the user is in English. One article is one `index.md` inside its own folder under `public/<study>/<slug>/`. Images live next to it in `images/` and are referenced with relative paths (`![구조도](images/topology.png)`).
+Write in the study's language, not the site's. The site chrome (landing page, study listings, navigation) is English; an individual article follows its study. The `aidcnw` study runs in Korean, so its articles are Korean. One article is one `index.md` inside its own directory at `public/<study>/<slug>/`, served at the clean URL `/study/<study>/<slug>/`. Images live in `images/` next to it and are referenced relatively (`![구조도](images/topology.png)`).
 
 No YAML frontmatter. The renderer takes the first `# H1` as the title. Start the file with that H1.
 
 ## Structure
 
-- Open with the actual content, not a preamble. The first paragraph says what the session covered or what the topic is, with specifics. No "이번 글에서는 ~를 다뤄보겠습니다".
+- Open with the actual content, not a preamble. The first paragraph says what the session covered or what the topic is, with specifics. No "In this post I'll cover..." / "이번 글에서는 ~를 다뤄보겠습니다".
 - Use `##` sections for the real subtopics. Section titles name the thing, not a category ("RoCE가 손실 네트워크에서 죽는 이유", not "주요 개념").
 - Vary section depth by how much there is to say. A subtopic you understood well gets more room. Don't pad thin ones to match.
 - End on a concrete takeaway, an open question, or what you want to dig into next. Not a recap of what you just wrote.
-- Length follows the material. A weekly summary is usually 400 to 900 Korean words. A single-topic deep dive can be longer. Don't inflate.
+- Length follows the material. A weekly summary is usually 400 to 900 words. A single-topic deep dive can be longer. Don't inflate.
 
 ## The honesty bar (most important)
 
@@ -26,7 +26,7 @@ This is the line between a real study note and AI filler.
 
 - Only write what the source actually said or what you can verify. If you summarize a session, summarize what was covered, not what a textbook would cover.
 - No invented numbers, benchmarks, dates, or "studies show". If you cite a figure, it comes from a named source (a doc, a paper, a repo, a vendor page). Link it.
-- Mark uncertainty in the writer's voice: "여기는 아직 잘 모르겠는데", "확인이 필요함". Do not smooth over gaps with confident generic prose.
+- Mark uncertainty in the writer's voice ("여기는 아직 잘 모르겠는데", "확인이 필요함" / "not sure about this part yet"). Do not smooth over gaps with confident generic prose.
 - Allow honest negatives. If a technology has annoying tradeoffs, say so. AI positivity bias is a tell.
 - When researching a topic the writer didn't cover, say where it came from and keep claims to what the source supports.
 

@@ -9,7 +9,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html { -webkit-text-size-adjust: 100%; }
 
 body {
@@ -25,33 +24,35 @@ a:hover { text-decoration: underline; }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
 
-/* index header */
-.site-head { border-bottom: 1px solid var(--border); padding: 48px 0 28px; }
-.site-head h1 { margin: 0 0 6px; font-size: 28px; }
-.site-head p { margin: 0; color: var(--muted); }
+/* headers */
+.site-head { border-bottom: 1px solid var(--border); padding: 40px 0 28px; }
+.site-head h1 { margin: 8px 0 6px; font-size: 28px; }
+.site-head .desc { margin: 0; color: var(--muted); }
+.site-head a.back { font-size: 13px; color: var(--muted); }
+.site-head a.back:hover { color: var(--link); }
 
-/* study + article list */
+/* lists (studies + articles share styling) */
 .studies { padding: 8px 0 64px; }
-.study { padding: 28px 0; border-bottom: 1px solid var(--border); }
-.study:last-child { border-bottom: none; }
-.study > h2 { margin: 0 0 4px; font-size: 20px; }
-.study > .desc { margin: 0 0 16px; color: var(--muted); font-size: 14px; }
-
-.article-list { list-style: none; margin: 0; padding: 0; }
-.article-item { padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 10px; transition: border-color .15s, background .15s; }
-.article-item:hover { border-color: var(--link); background: var(--accent-bg); }
-.article-item a.title { font-size: 16px; font-weight: 600; }
-.article-item .meta { color: var(--muted); font-size: 13px; margin-top: 2px; }
-.article-item .summary { color: var(--fg); font-size: 14px; margin-top: 6px; }
-.empty-study { color: var(--muted); font-size: 14px; font-style: italic; }
+.study-list, .article-list { list-style: none; margin: 0; padding: 16px 0 0; }
+.study-item, .article-item {
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: border-color .15s, background .15s;
+}
+.study-item:hover, .article-item:hover { border-color: var(--link); background: var(--accent-bg); }
+.study-item a.title, .article-item a.title { font-size: 16px; font-weight: 600; }
+.study-item .meta, .article-item .meta { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.study-item .summary, .article-item .summary { color: var(--fg); font-size: 14px; margin-top: 6px; }
+.empty-study { color: var(--muted); font-size: 14px; font-style: italic; list-style: none; }
 
 .foot { color: var(--muted); font-size: 13px; padding: 24px 0 48px; border-top: 1px solid var(--border); }
 
-/* viewer */
+/* article viewer */
 .viewer-bar { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
-.viewer-bar .wrap { display: flex; align-items: center; gap: 12px; height: 52px; }
+.viewer-bar .wrap { display: flex; align-items: center; gap: 8px; height: 52px; }
 .viewer-bar a.back { font-size: 14px; }
-.viewer-bar .crumb { color: var(--muted); font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.viewer-bar .sep { color: var(--muted); }
 .doc-wrap { padding: 32px 0 80px; }
 zero-md { display: block; }
-.notfound { padding: 64px 20px; text-align: center; color: var(--muted); }

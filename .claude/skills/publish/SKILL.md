@@ -10,14 +10,14 @@ Commit pending changes and push to `origin/main`. The push triggers `.github/wor
 
 ## Input
 
-`$ARGUMENTS` is an optional commit message. If empty, write one from the actual diff following Conventional Commits (e.g. `docs(ai-networking): add week 1 RoCE summary`).
+`$ARGUMENTS` is an optional commit message. If empty, write one from the actual diff, Conventional Commits style (e.g. `docs(aidcnw): add week 1 RDMA summary`).
 
 ## Workflow
 
 1. Sanity-check before committing:
    - `public/manifest.json` is valid JSON.
-   - Every `path` in the manifest points to a file that exists.
-   - Every `public/<study>/<slug>/index.md` on disk is listed in the manifest (warn on orphans, do not auto-add).
+   - For every study `<id>` and article `<slug>` in the manifest, both `public/<id>/<slug>/index.md` and `public/<id>/<slug>/index.html` exist, and `public/<id>/index.html` exists.
+   - Every `public/<id>/<slug>/index.md` on disk is listed in the manifest (warn on orphans, do not auto-add).
    - Referenced images (`images/...`) exist and are committed.
    Report problems and stop if any path is broken.
 2. Stage and commit:
@@ -29,13 +29,16 @@ Commit pending changes and push to `origin/main`. The push triggers `.github/wor
    ```bash
    git push origin main
    ```
-   If the branch has no upstream yet, use `git push -u origin main`.
-4. Report the commit, that the Pages workflow is now running, and the live URL: `https://hhoikoo.github.io/study/`. A specific article is `https://hhoikoo.github.io/study/viewer.html#<study-id>/<slug>/index.md`.
+   Use `git push -u origin main` if there is no upstream yet.
+4. Report the commit, that the Pages workflow is running, and the URLs:
+   - Site: `https://hhoikoo.github.io/study/`
+   - Study: `https://hhoikoo.github.io/study/<id>/`
+   - Article: `https://hhoikoo.github.io/study/<id>/<slug>/`
 
 ## Notes
 
-- First-ever deploy also needs GitHub Pages set to "GitHub Actions" as the source in repo Settings -> Pages. Mention this if the workflow has never run.
-- Do not commit secrets. This repo is public.
-- Keep one logical change per commit when it is easy to.
+- First-ever deploy also needs GitHub Pages source set to "GitHub Actions" (repo Settings -> Pages). Mention this if the workflow has never run.
+- This repo is public. Do not commit secrets.
+- Do not add AI-attribution trailers to the commit; the repo strips them by design.
 
 $ARGUMENTS
