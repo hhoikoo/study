@@ -10,6 +10,44 @@
       "description": "GPU cluster networking: RDMA, RoCE, collective communication, and how the fabric keeps GPUs fed.",
       "articles": [
         {
+          "slug": "week2-gpu-cluster-network",
+          "title": "2주차: GPU 클러스터 네트워크, 인터커넥트부터 ROD/RUD까지",
+          "date": "2026-06-21",
+          "summary": "scale-up 인터커넥트 사다리, NCCL·NUMA, IB vs RoCEv2, RoCEv2 혼잡 제어(PFC·ECN·DCQCN·SFC·CSIG), 그리고 ROD/RUD와 랙 설계까지 2주차 네 질문 정리",
+          "children": [
+            {
+              "slug": "interconnect-ladder",
+              "title": "다이에서 랙까지, GPU를 잇는 인터커넥트 사다리",
+              "summary": "NV-HBI·NVLink-C2C·NVLink·NVSwitch로 이어지는 scale-up 사다리, PCIe와의 격차, lane/rail 구분, NVLink 세대별 대역폭과 SHARP"
+            },
+            {
+              "slug": "gpu-generations",
+              "title": "A100에서 B300까지: GPU 6세대가 바꾼 것",
+              "summary": "정밀도(FP16->FP8->FP4)와 메모리(80->288GB) 두 축으로 본 NVIDIA GPU 세대 변천과 NVLink 동반 진화"
+            },
+            {
+              "slug": "nccl-and-numa",
+              "title": "노드 안 통신: NCCL collective 8종부터 NUMA 배치까지",
+              "summary": "NCCL collective 8종과 노드 안 데이터 경로(NCCL_P2P_LEVEL·PROTO·nvidia-smi topo), 그리고 GPU·NIC를 같은 소켓에 묶는 NUMA 배치"
+            },
+            {
+              "slug": "ib-vs-rocev2",
+              "title": "InfiniBand vs RoCEv2: 같은 RDMA, 다른 길",
+              "summary": "IB를 아키텍처로 본 transport service type·주소 체계, RoCEv1과 v2를 가르는 GID 인덱스, BTH, 그리고 RoCEv2의 무손실 숙제"
+            },
+            {
+              "slug": "rocev2-congestion",
+              "title": "RoCEv2 혼잡 제어: PFC, ECN, DCQCN, 그리고 그 다음",
+              "summary": "혼잡이 생기는 자리와 incast, elephant flow와 flowlet, ECN<PFC 임계 순서로 본 DCQCN, 그리고 SFC와 CSIG"
+            },
+            {
+              "slug": "cluster-design-rod-rud",
+              "title": "GPU 클러스터를 어떻게 짜나: 오버서브스크립션, ROD, RUD",
+              "summary": "high-radix와 1:1 오버서브스크립션, rail one-hop의 ROD와 leaf로 묶는 RUD, 그리고 ToR/MoR/EoR 랙 설계"
+            }
+          ]
+        },
+        {
           "slug": "week1-ai-model-lifecycle",
           "title": "1주차: GPU는 빠른데 왜 네트워크가 병목일까",
           "date": "2026-06-14",

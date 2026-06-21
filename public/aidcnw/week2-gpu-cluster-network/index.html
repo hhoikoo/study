@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Article</title>
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="stylesheet" href="../../assets/style.css?v=4">
+<script defer src="../../assets/theme.js?v=4"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@2/dist/zero-md.min.js"></script>
+</head>
+<body>
+<div class="viewer-bar">
+  <div class="wrap">
+    <a class="back" href="../../">Studies</a>
+    <span class="sep">/</span>
+    <a class="back" id="study-link" href="../">Articles</a>
+  </div>
+</div>
+
+<main class="wrap doc-wrap">
+  <zero-md id="doc" src="index.md">
+    <template data-merge="append">
+      <style>
+        /* zero-md v2 highlights with PrismJS; override its light theme with our theme vars */
+        .markdown-body pre[class*="language-"],
+        .markdown-body code[class*="language-"] { color: var(--fg); background: transparent; text-shadow: none; }
+        .markdown-body pre code { color: var(--fg); }
+        .markdown-body pre[class*="language-"] { background: var(--accent-bg); }
+        .markdown-body :not(pre) > code[class*="language-"] { background: var(--accent-bg); }
+        .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); font-style: italic; }
+        .token.punctuation { color: var(--fg); }
+        .token.operator, .token.entity, .token.url { color: var(--fg); background: transparent; }
+        .token.boolean, .token.constant, .token.deleted, .token.number, .token.property, .token.symbol, .token.tag { color: var(--tok-number); }
+        .token.attr-name, .token.builtin, .token.char, .token.inserted, .token.selector, .token.string { color: var(--tok-string); }
+        .token.atrule, .token.attr-value, .token.keyword { color: var(--tok-keyword); }
+        .token.class-name, .token.function { color: var(--tok-title); }
+        .token.important, .token.regex, .token.variable { color: var(--tok-type); }
+      </style>
+    </template>
+  </zero-md>
+</main>
+
+<script>
+// Derive the study id from the path so the breadcrumb works at any base path.
+const segs = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '').split('/');
+const study = segs[segs.length - 2] || '';
+if (study) document.getElementById('study-link').textContent = study;
+
+const zm = document.getElementById('doc');
+zm.addEventListener('zero-md-rendered', () => {
+  const h = zm.shadowRoot && zm.shadowRoot.querySelector('h1, h2');
+  if (h && h.textContent.trim()) document.title = h.textContent.trim();
+});
+</script>
+</body>
+</html>

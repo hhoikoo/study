@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Article</title>
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<link rel="stylesheet" href="../../../assets/style.css?v=4">
+<script defer src="../../../assets/theme.js?v=4"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@2/dist/zero-md.min.js"></script>
+</head>
+<body>
+<div class="viewer-bar">
+  <div class="wrap">
+    <a class="back" href="../../../">Studies</a>
+    <span class="sep">/</span>
+    <a class="back" id="study-link" href="../../">study</a>
+    <span class="sep">/</span>
+    <a class="back" id="parent-link" href="../">article</a>
+  </div>
+</div>
+
+<main class="wrap doc-wrap">
+  <zero-md id="doc" src="index.md">
+    <template data-merge="append">
+      <style>
+        /* zero-md v2 highlights with PrismJS; override its light theme with our theme vars */
+        .markdown-body pre[class*="language-"],
+        .markdown-body code[class*="language-"] { color: var(--fg); background: transparent; text-shadow: none; }
+        .markdown-body pre code { color: var(--fg); }
+        .markdown-body pre[class*="language-"] { background: var(--accent-bg); }
+        .markdown-body :not(pre) > code[class*="language-"] { background: var(--accent-bg); }
+        .token.comment, .token.prolog, .token.doctype, .token.cdata { color: var(--tok-comment); font-style: italic; }
+        .token.punctuation { color: var(--fg); }
+        .token.operator, .token.entity, .token.url { color: var(--fg); background: transparent; }
+        .token.boolean, .token.constant, .token.deleted, .token.number, .token.property, .token.symbol, .token.tag { color: var(--tok-number); }
+        .token.attr-name, .token.builtin, .token.char, .token.inserted, .token.selector, .token.string { color: var(--tok-string); }
+        .token.atrule, .token.attr-value, .token.keyword { color: var(--tok-keyword); }
+        .token.class-name, .token.function { color: var(--tok-title); }
+        .token.important, .token.regex, .token.variable { color: var(--tok-type); }
+      </style>
+    </template>
+  </zero-md>
+</main>
+
+<script>
+// A sub-article sits at /<study>/<parent>/<child>/. Derive study + parent from the path
+// so the breadcrumb works at any base path, then upgrade the labels from the manifest.
+const segs = location.pathname.replace(/\/index\.html$/, '').replace(/\/$/, '').split('/');
+const studyId = segs[segs.length - 3] || '';
+const parentSlug = segs[segs.length - 2] || '';
+const studyLink = document.getElementById('study-link');
+const parentLink = document.getElementById('parent-link');
+if (studyId) studyLink.textContent = studyId;
+if (parentSlug) parentLink.textContent = parentSlug;
+
+fetch('../../../manifest.json', { cache: 'no-store' })
+  .then(r => r.json())
+  .then(data => {
+    const study = (data.studies || []).find(s => s.id === studyId);
+    if (!study) return;
+    studyLink.textContent = study.title || studyId;
+    const parent = (study.articles || []).find(a => a.slug === parentSlug);
+    if (parent && parent.title) parentLink.textContent = parent.title;
+  })
+  .catch(() => {});
+
+const zm = document.getElementById('doc');
+zm.addEventListener('zero-md-rendered', () => {
+  const h = zm.shadowRoot && zm.shadowRoot.querySelector('h1, h2');
+  if (h && h.textContent.trim()) document.title = h.textContent.trim();
+});
+</script>
+</body>
+</html>

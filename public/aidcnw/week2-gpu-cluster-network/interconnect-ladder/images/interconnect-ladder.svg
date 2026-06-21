@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="-apple-system,Segoe UI,Roboto,sans-serif">
+<rect x="0" y="0" width="760" height="360" rx="12" fill="#fbfbfa"/>
+
+<text x="30" y="32" fill="#333" font-size="14" font-weight="bold">인터커넥트 사다리: 묶는 단위가 한 칸씩 커진다</text>
+
+<!-- Row 1: NV-HBI (two dies in one package) -->
+<text x="30" y="74" fill="#0969da" font-size="12" font-weight="bold">NV-HBI</text>
+<text x="30" y="91" fill="#777" font-size="10">다이 ↔ 다이, 약 10 TB/s</text>
+<rect x="200" y="58" width="150" height="44" rx="8" fill="none" stroke="#7aa7d6" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="210" y="66" width="58" height="28" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="239" y="84" fill="#333" font-size="9.5" text-anchor="middle">die</text>
+<rect x="282" y="66" width="58" height="28" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="311" y="84" fill="#333" font-size="9.5" text-anchor="middle">die</text>
+<text x="370" y="84" fill="#777" font-size="10">= OS엔 GPU 한 장</text>
+
+<!-- Row 2: NVLink-C2C (CPU - GPU) -->
+<text x="30" y="138" fill="#0969da" font-size="12" font-weight="bold">NVLink-C2C</text>
+<text x="30" y="155" fill="#777" font-size="10">CPU ↔ GPU, 900 GB/s, coherent</text>
+<rect x="210" y="124" width="58" height="28" rx="4" fill="#fde9c8" stroke="#9aa0a6"/><text x="239" y="142" fill="#333" font-size="9.5" text-anchor="middle">CPU</text>
+<rect x="282" y="124" width="58" height="28" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="311" y="142" fill="#333" font-size="9.5" text-anchor="middle">GPU</text>
+<line x1="268" y1="138" x2="282" y2="138" stroke="#999" stroke-width="2"/>
+<text x="370" y="142" fill="#777" font-size="10">메모리 공유, 복사 없음</text>
+
+<!-- Row 3: NVLink (GPU - GPU) -->
+<text x="30" y="202" fill="#0969da" font-size="12" font-weight="bold">NVLink</text>
+<text x="30" y="219" fill="#777" font-size="10">GPU ↔ GPU 직결</text>
+<rect x="210" y="188" width="58" height="28" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="239" y="206" fill="#333" font-size="9.5" text-anchor="middle">GPU</text>
+<rect x="282" y="188" width="58" height="28" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="311" y="206" fill="#333" font-size="9.5" text-anchor="middle">GPU</text>
+<line x1="268" y1="202" x2="282" y2="202" stroke="#999" stroke-width="2"/>
+<text x="370" y="206" fill="#777" font-size="10">CPU 우회로 없이 직접</text>
+
+<!-- Row 4: NVSwitch (many GPUs all-to-all) -->
+<text x="30" y="276" fill="#0969da" font-size="12" font-weight="bold">NVSwitch</text>
+<text x="30" y="293" fill="#777" font-size="10">GPU 묶음, all-to-all 교차로</text>
+<rect x="240" y="300" width="92" height="30" rx="6" fill="#cfe2f3" stroke="#9aa0a6"/><text x="286" y="320" fill="#333" font-size="10" text-anchor="middle">NVSwitch</text>
+<g font-size="9.5" text-anchor="middle">
+<rect x="200" y="252" width="44" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="222" y="269" fill="#333">GPU</text>
+<rect x="252" y="252" width="44" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="274" y="269" fill="#333">GPU</text>
+<rect x="304" y="252" width="44" height="26" rx="4" fill="#cdeccd" stroke="#9aa0a6"/><text x="326" y="269" fill="#333">GPU</text>
+</g>
+<line x1="222" y1="278" x2="270" y2="300" stroke="#999" stroke-width="1.3"/>
+<line x1="274" y1="278" x2="286" y2="300" stroke="#999" stroke-width="1.3"/>
+<line x1="326" y1="278" x2="302" y2="300" stroke="#999" stroke-width="1.3"/>
+<text x="372" y="320" fill="#777" font-size="10">→ NVL72면 랙 한 대로</text>
+
+<!-- side note PCIe -->
+<line x1="600" y1="58" x2="600" y2="330" stroke="#e2e2e2" stroke-width="1"/>
+<text x="618" y="74" fill="#333" font-size="11" font-weight="bold">PCIe</text>
+<text x="618" y="92" fill="#777" font-size="9.5">시스템 표준 도로.</text>
+<text x="618" y="106" fill="#777" font-size="9.5">CPU↔GPU, NIC 연결.</text>
+<text x="618" y="120" fill="#777" font-size="9.5">Gen5 x16 ≈ 128 GB/s,</text>
+<text x="618" y="134" fill="#777" font-size="9.5">NVLink5의 약 1/14.</text>
+</svg>
