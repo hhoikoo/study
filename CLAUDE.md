@@ -37,6 +37,17 @@ The two `index.html` templates are generic. The study page derives its id from i
 
 Live site is a project page at `https://hhoikoo.github.io/study/`, so in-page paths are relative.
 
+## Prev/next article navigation
+
+Every article and sub-article page renders a previous/next footer at the bottom, injected by `public/assets/nav.js` (included after `theme.js` in the article + sub-article HTML, and in both `templates/`). It reads `manifest.json`, ordering articles by `date` ascending and each article's `children` in manifest order. The `next` chain is a flat depth-first walk; the `prev` of a main page is asymmetric:
+
+- week main page: `prev` = previous week's **main** page, `next` = its own first child.
+- child page: `prev` = previous child (or the week main if it is the first child), `next` = next child (or the next week's main page if it is the last child).
+
+So from a week's last child `next` lands on the following week's main, but that main's `prev` jumps back to the previous week's main rather than that week's last child. Navigation stays inside one study; the first and last pages show only the one available side.
+
+This is automatic. Do not hand-write prev/next links in `index.md`. To keep ordering correct you only maintain `manifest.json`: list each article with a `date`, and order each `children` array the way the sections read. New pages scaffolded from `templates/` already include `nav.js`; if you hand-build article HTML, add the `nav.js` script line after `theme.js` with the same relative prefix.
+
 ## Skills
 
 | Skill | Use |

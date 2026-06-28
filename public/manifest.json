@@ -10,6 +10,44 @@
       "description": "GPU cluster networking: RDMA, RoCE, collective communication, and how the fabric keeps GPUs fed.",
       "articles": [
         {
+          "slug": "week3-power-optics-loadbalancing",
+          "title": "3주차: 전력과 냉각, 광·케이블, 그리고 로드밸런싱",
+          "date": "2026-06-28",
+          "summary": "AI 데이터센터의 물리 계층. 전력 인입·UPS·PUE와 공조 풍량의 한계, 액체 냉각(DLC·immersion·cold plate·RDHx), DAC/AEC/AOC와 광 트랜시버 내부, LPO/LRO/CPO, A100→Vera Rubin 랙 진화, 그리고 ECMP를 넘는 flowlet·packet spraying 로드밸런싱",
+          "children": [
+            {
+              "slug": "power-and-cooling",
+              "title": "전력과 냉각: AI 랙은 결국 전기와 열의 문제다",
+              "summary": "154kV 초고압 인입과 UPS·비상발전기, PUE, 그리고 1kW=860kcal/h·kW당 4.5m³/min 풍량 계산으로 본 공랭의 한계"
+            },
+            {
+              "slug": "liquid-cooling",
+              "title": "액체 냉각: 공기로 안 되면 물로",
+              "summary": "물이 공기보다 3,000배 많은 열을 나르는 이유, 엔비디아가 액침 대신 cold plate(DLC)로 간 사정, RDHx·분사식과 front-to-back airflow"
+            },
+            {
+              "slug": "optics-and-cable",
+              "title": "광모듈과 케이블: 신호가 실제로 지나가는 길",
+              "summary": "DAC·AEC·AOC의 거리별 분담, DSP·EML·TIA로 본 광 트랜시버 내부, MMF/SMF/DWDM, VR-ZR reach 등급, QSFP-DD/OSFP 폼팩터와 800G breakout"
+            },
+            {
+              "slug": "next-gen-optics",
+              "title": "차세대 optics: DSP를 빼거나, 옮기거나, 통합하거나",
+              "summary": "트랜시버 전력의 절반을 먹는 DSP를 둘러싼 LPO·LRO·CPO, 그리고 CPO가 약 3.5배 전력을 아끼는 대신 치르는 유연성 비용"
+            },
+            {
+              "slug": "nvidia-rack-evolution",
+              "title": "엔비디아 세대별 랙 진화: A100에서 Vera Rubin까지",
+              "summary": "공랭·구리·유연 구성의 A100부터 GPU 수냉의 GB200 NVL72, 전체 수냉에 CPO를 박는 Vera Rubin까지 냉각과 케이블의 동반 변화"
+            },
+            {
+              "slug": "load-balancing",
+              "title": "AI 패브릭 로드밸런싱: ECMP를 넘어 packet spraying까지",
+              "summary": "5-tuple ECMP의 hash polarization, RDMA Write First/Middle/Last의 순서 의존성, flowlet adaptive routing과 packet spraying, RDMA Write Only, Cisco DLB"
+            }
+          ]
+        },
+        {
           "slug": "week2-gpu-cluster-network",
           "title": "2주차: GPU 클러스터 네트워크, 인터커넥트부터 ROD/RUD까지",
           "date": "2026-06-21",
